@@ -1,4 +1,3 @@
-
 class Serie {
   constructor(nome, genero, temporadas, nota) {
     this.nome = nome;
@@ -13,16 +12,15 @@ const series = [];
 
 // Função para adicionar uma série
 function btnSalvar() {
-
-  const nome = document.getElementById('m-nome').value;
-  const genero = document.getElementById('m-genero').value;
-  const temporadas = parseFloat(document.getElementById('m-temporadas').value);
-  const nota = parseFloat(document.getElementById('m-nota').value);
+  const nomeInput = document.getElementById('m-nome');
+  const generoInput = document.getElementById('m-genero');
+  const temporadasInput = parseFloat(document.getElementById('m-temporadas').value);
+  const notaInput = parseFloat(document.getElementById('m-nota').value);
 
   // Verificar se o nome, gênero e nota são válidos
-  if (nome && genero && !isNaN(nota)) {
+  if (nomeInput.value && generoInput.value && !isNaN(notaInput)) {
     // Criar uma nova série
-    const serie = new Serie(nome, genero, temporadas, nota);
+    const serie = new Serie(nomeInput.value, generoInput.value, temporadasInput, notaInput);
     
     // Adicionar a série ao array
     series.push(serie);
@@ -71,7 +69,6 @@ function editarSerie(nome) {
   const serie = series.find(s => s.nome === nome);
 
   if (serie) {
-
     document.getElementById('m-nome').value = serie.nome;
     document.getElementById('m-genero').value = serie.genero;
     document.getElementById('m-temporadas').value = serie.temporadas;
@@ -103,7 +100,6 @@ function excluirSerie(nome) {
   }
 }
 
-
-document.getElementById('btnSalvar').addEventListener('click', btnSalvar);
+document.getElementById('btn').addEventListener('click', btnSalvar);
 
 atualizarTabela();
