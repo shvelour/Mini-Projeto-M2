@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Cine Diary</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span>Cine Diary</span>
+      <button onclick="openModal()" id="new">Adicionar</i></button>
+    </div>
+
+    <div class="divTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Gênero</th>
+            <th>Temporadas</th>
+            <th>Nota</th>
+            <th class="acao" onclick="editarSerie()">Editar</th>
+            <th class="acao" onclick="excluirSerie()">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+            <img src="./assets/x.svg" onclick="closeModal()">
+          <label for="m-nome">Nome</label>
+          <input id="m-nome" type="text" required >
+  
+          <label for="m-genero">Gênero</label>
+          <input id="m-genero" type="text" required >
+  
+          <label for="m-temporadas">Temporadas</label>
+          <input id="m-temporadas" type="number" required >
+
+          <label for="m-nota">Nota</label>
+          <select id="m-nota" name="nota">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+
+          <button id="btn" onclick="btnSalvar()">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="cadastro.js"></script>
+</body>
+
+</html>
+
